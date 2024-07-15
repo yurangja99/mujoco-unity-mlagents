@@ -1,0 +1,33 @@
+<mujoco>
+  <compiler coordinate="local" />
+  <option gravity="0 0 -9.81" timestep="0.005" />
+  <option impratio="1" magnetic="0 0 0" wind="0 -0.5 0" density="0" viscosity="0" o_margin="0" o_solref="0.02 1" o_solimp="0.9 0.95 0.001 0.5 2" integrator="Euler" cone="pyramidal" jacobian="auto" solver="Newton" iterations="100" tolerance="1E-08" noslip_iterations="0" noslip_tolerance="1E-06" mpr_iterations="50" mpr_tolerance="1E-06">
+    <flag constraint="enable" equality="enable" frictionloss="enable" limit="enable" contact="enable" passive="enable" gravity="enable" clampctrl="enable" warmstart="enable" filterparent="enable" actuation="enable" refsafe="enable" override="disable" energy="disable" fwdinv="disable" multiccd="disable" />
+  </option>
+  <worldbody>
+    <light name="light" mode="fixed" pos="0 -0.5 3" dir="0 0.5 -3" />
+    <camera name="main_camera" mode="fixed" pos="0 -3 1.5" quat="0.8192 0.5736 0 0" />
+    <geom density="1000" type="plane" size="4 4 1" pos="0 0 -2.5" quat="-1 0 0 0" priority="0" contype="0" conaffinity="1" group="0" condim="3" solmix="1" solref="0.02 1" solimp="0.9 0.95 0.001" margin="0" gap="0" friction="1 0.1 0.1" fluidshape="none" fluidcoef="5 0.25 1.5 1 1" name="floor_0" />
+    <body pos="0 0 0" quat="-1 0 0 0" gravcomp="0" name="cart_1">
+      <joint type="slide" pos="0 0 0" axis="1 0 0" ref="0" armature="0" springref="0" springdamper="0 0" damping="0.05" stiffness="0" solreflimit="0.08 1" solimplimit="0.9 0.95 0.001 0.5 2" solreffriction="0.02 1" solimpfriction="0.9 0.95 0.001 0.5 2" frictionloss="0" limited="true" margin="0" range="-1 1" name="slider_2" />
+      <geom mass="1.5" type="box" size="0.2 0.1 0.05" pos="0 0 0" quat="-1 0 0 0" priority="0" contype="0" conaffinity="1" group="0" condim="3" solmix="1" solref="0.02 1" solimp="0.9 0.95 0.001" margin="0" gap="0" friction="1 0.1 0.1" fluidshape="none" fluidcoef="5 0.25 1.5 1 1" name="cart_3" />
+      <body pos="0 0 0" quat="1 0 0 0" gravcomp="0" name="pole_5">
+        <joint type="hinge" pos="0 0 0" axis="-1.192093E-07 1 0" ref="0" armature="0" springref="0" springdamper="0 0" damping="0.05" stiffness="0" solreflimit="0.08 1" solimplimit="0.9 0.95 0.001 0.5 2" solreffriction="0.02 1" solimpfriction="0.9 0.95 0.001 0.5 2" frictionloss="0" limited="false" margin="0" range="0 0" name="hinge_6" />
+        <geom mass="0.5" type="capsule" size="0.045 0.25" pos="0 0 0.25" quat="0 1 0 0" rgba="1 0 0 1" priority="0" contype="0" conaffinity="1" group="0" condim="3" solmix="1" solref="0.02 1" solimp="0.9 0.95 0.001" margin="0" gap="0" friction="1 0.1 0.1" fluidshape="none" fluidcoef="5 0.25 1.5 1 1" name="cpole_7" />
+        <body pos="0 0 0.5" quat="-1 0 0 0" gravcomp="0" name="tipBody_9" />
+        <body pos="0 0 0.5" quat="-1 0 0 0" gravcomp="0" name="extend pole_10">
+          <joint type="hinge" pos="0 0 0" axis="-1.192093E-07 1 0" ref="0" armature="0" springref="0" springdamper="0 0" damping="0.05" stiffness="0" solreflimit="0.08 1" solimplimit="0.9 0.95 0.001 0.5 2" solreffriction="0.02 1" solimpfriction="0.9 0.95 0.001 0.5 2" frictionloss="0" limited="false" margin="0" range="0 0" name="hinge_11" />
+          <geom mass="0.75" type="capsule" size="0.045 0.375" pos="0 0 0.375" quat="0 1 0 0" rgba="0 0 1 1" priority="0" contype="0" conaffinity="1" group="0" condim="3" solmix="1" solref="0.02 1" solimp="0.9 0.95 0.001" margin="0" gap="0" friction="1 0.1 0.1" fluidshape="none" fluidcoef="5 0.25 1.5 1 1" name="cpole_12" />
+          <site type="sphere" size="0.01" pos="0.001 0 0.75" quat="-1 0 0 0" name="tip_13" />
+          <body pos="0 0 0.75" quat="-1 0 0 0" gravcomp="0" name="tipBody_14" />
+        </body>
+      </body>
+    </body>
+    <geom density="1000" type="capsule" size="0.02000001 1.2" pos="0 -0.07 0" quat="0.7071068 0 0.7071068 0" priority="0" contype="0" conaffinity="1" group="0" condim="3" solmix="1" solref="0.02 1" solimp="0.9 0.95 0.001" margin="0" gap="0" friction="1 0.1 0.1" fluidshape="none" fluidcoef="5 0.25 1.5 1 1" name="rail2_15" />
+    <geom density="1000" type="capsule" size="0.02000001 1.2" pos="0 0.07 0" quat="0.7071068 0 0.7071068 0" priority="0" contype="0" conaffinity="1" group="0" condim="3" solmix="1" solref="0.02 1" solimp="0.9 0.95 0.001" margin="0" gap="0" friction="1 0.1 0.1" fluidshape="none" fluidcoef="5 0.25 1.5 1 1" name="rail1_16" />
+    
+  </worldbody>
+  <actuator>
+    <general joint="slider_2" ctrllimited="true" forcelimited="false" ctrlrange="-10 10" forcerange="0 0" lengthrange="0 0" gear="50 0 0 0 0 0" dyntype="none" gaintype="fixed" biastype="none" dynprm="1 0 0" gainprm="1 0 0" biasprm="0 0 0" name="slide_17" />
+  </actuator>
+</mujoco>
