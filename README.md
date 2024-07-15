@@ -67,7 +67,7 @@ Desired rewards are described below, but not implemented yet.
 ## Core Files
 
 - [SampleScene.unity](./Assets/Scenes/SampleScene.unity): you can open this file to edit and run simulation in Unity
-- [inverted_double_pendulum.xml](./Assets/mujoco_scenes/inverted_double_pendulum.xml): an `.xml` format MJCF file that is used in MuJoCo, and also imported by Unity
+- [inverted_double_pendulum.xml](./mujoco_scenes/inverted_double_pendulum.xml): an `.xml` format MJCF file that is used in MuJoCo, and also imported by Unity
 - [inverted_double_pendulum.onnx](./Assets/models/inverted_double_pendulum.onnx): an agent that is trained in MuJoCo, then converted to `.onnx` format
 - [scripts](./Assets/scripts/): Unity scripts for observations, actions, and rewards of the task
 
